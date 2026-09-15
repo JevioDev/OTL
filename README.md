@@ -6,6 +6,8 @@ Most coding agents can write CSS. The harder problem is knowing why a visual dec
 
 OTL gives coding agents a structured design reasoning process: understand the product and implementation context, form a Visual Thesis, make decisions with a WHY Test, implement in the existing stack, and correct the result through independent visual and implementation-quality gates.
 
+The process scales to the work: localized edits use a compact constraint/WHY/verification pass, while substantial surfaces use the full workflow, a decision ledger, content stress tests, and both quality gates.
+
 ## Why OTL exists
 
 AI-generated interfaces often repeat familiar structures: the same hero, cards, section rhythm, typography behavior, and decorative treatment. Aesthetic novelty is easily confused with design quality.
