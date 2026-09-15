@@ -183,7 +183,7 @@ Classify findings before correcting them:
 2. **Legibility:** type scale, contrast, wrapping, focus visibility, or density problems.
 3. **Treatment:** color nuance, border, radius, shadow, icon alignment, or motion refinement.
 
-After each correction, re-check the affected viewport and state. Stop when the decision ledger checks pass, no structural or legibility findings remain, and treatment changes would be preference-only.
+After each correction, re-check the affected viewport and state. Stop when the decision ledger checks pass, no material unresolved structural or legibility findings remain, and treatment changes would be preference-only. Any remaining structural or legibility finding must be explicitly blocked or out of scope.
 
 ### 8. Ship
 
@@ -221,7 +221,7 @@ For any substantial surface, keep a compact working note with:
 4. selected axes and their consequences;
 5. Visual Thesis;
 6. composition map;
-7. three to seven high-signal decisions with their `because` tests;
+7. three to seven high-signal decisions with `choice`, `because`, and observable `check`;
 8. visual and implementation QA targets, evidence status, and findings;
 9. corrections made.
 
