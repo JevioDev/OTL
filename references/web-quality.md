@@ -10,6 +10,23 @@ Use this gate for substantial production web UI and for flows whose behavior or 
 
 Start with the actual framework, runtime, components, and content. Inspect the source and run the relevant checks, then exercise important states in the browser when available. Record what was verified and what could not be observed. Keep subjective visual critique in [visual-review.md](visual-review.md).
 
+## Evidence matrix and claim discipline
+
+Separate what a check proves from what it merely suggests. Record each material capability once with an evidence type and status:
+
+| Evidence type | Can support | Cannot support by itself |
+| --- | --- | --- |
+| Static render, source inspection, or string check | required copy, component presence, static structure | working interaction, keyboard behavior, runtime state, visual quality |
+| Typecheck, lint, or production build | code validity and build output | stable preview, browser behavior, accessibility, visual quality |
+| Runtime interaction test | a named flow or state under the exercised inputs | untested states, visual quality, full accessibility coverage |
+| Rendered screenshot or preview | hierarchy, composition, wrapping, density, responsive appearance | semantics, keyboard operation, persistence, hidden states |
+| DOM/route/content audit | navigation topology, entity ownership, duplicates, landmarks, rendered content relationships | visual hierarchy, touch feel, unobserved runtime behavior |
+| Accessibility or platform test | the exercised semantics, focus, input, and platform behavior | overall visual quality or untested flows |
+
+Use statuses such as `proven`, `partial`, `unverified`, or `blocked`. A claim must not be stronger than its evidence: static markup cannot prove a citation generator works, and a successful build cannot prove a preview is stable. Do not call a surface `production-ready` while a required capability is `unverified`; state the limitation or test it.
+
+When reporting a checklist, keep one canonical list of checks and derive the reported total from that list. The displayed count must equal the number of listed checks; do not report a passing total that includes checks not shown.
+
 ## Semantics and interaction
 
 - Use native semantic elements before recreating their semantics with ARIA or generic containers.

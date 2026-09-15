@@ -181,6 +181,8 @@ Before shipping a substantial surface, test the cases that can change its geomet
 
 Run both gates to completion. If screenshots or browser automation are unavailable, use the closest available rendered preview and state the evidence level (`rendered preview reviewed` or `source-only - visual review blocked`); do not claim visual QA was completed from source code alone.
 
+Keep an evidence matrix for substantial surfaces. For each material capability, record the strongest evidence actually obtained, its status (`proven`, `partial`, `unverified`, or `blocked`), and the remaining limitation. Static presence, build success, runtime behavior, rendered appearance, IA topology, and accessibility are separate evidence layers. A report must not use one layer to claim another.
+
 Classify findings before correcting them:
 
 1. **Structural:** wrong hierarchy, broken responsive composition, missing state, or unusable interaction. Fix first.
@@ -229,8 +231,9 @@ For any substantial surface, keep a compact working note with:
 8. page-level content inventory and primary home for each major entity;
 9. three to seven high-signal decisions with `choice`, `because`, and observable `check`;
 10. page-level IA preflight findings and disposition;
-11. visual and implementation QA targets, evidence status, and findings;
-12. corrections made.
+11. evidence matrix and claim audit;
+12. visual and implementation QA targets, evidence status, and findings;
+13. corrections made.
 
 Do not output this contract by default when the user only needs a small implementation. Use it to make the work coherent and auditable.
 
