@@ -25,6 +25,7 @@ The **Visual Thesis** is one product-specific sentence describing how the interf
 - context before aesthetics;
 - composition before components;
 - information architecture before visual prominence;
+- surface contracts and bounded review before polish;
 - decisions need reasons;
 - anti-slop is diagnosis, not a blacklist;
 - rendered output is evidence;

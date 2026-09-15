@@ -89,6 +89,8 @@ If the repository contains an existing product, audit it before changing its vis
 
 If a missing fact would lead to two materially different design directions, ask one short question. Otherwise infer conservatively and proceed.
 
+For a substantial surface, write a compact surface contract before coding: visitor mode (`Persuade`, `Operate`, `Read`, or `Experience`), primary task, proof or content the surface must carry, realistic content/data range, route topology, important states, and finish criteria. Keep this separate from durable product facts and from treatment details.
+
 ### 2. Write a Design Read
 
 Describe the interface's character in one or two sentences without naming CSS treatments. Include the audience tension it must resolve. For example: "A developer-facing network utility that must feel technically credible while remaining legible to operators who do not think in network primitives."
@@ -137,6 +139,8 @@ Before choosing components, decide:
 
 Components serve composition. Composition must not become a container for a library of components. Sketch a rough page map or wireframe when the surface is substantial.
 
+Choose one primary action and no more than two or three secondary actions for the first view. Define the route topology before naming component sections. Required source content may need to appear on the page without becoming a global navigation route, and a section anchor is not automatically a product-level destination.
+
 ### 5. Build a design language
 
 Choose typography, color roles, spacing, shape, borders, elevation, iconography, and motion as a coherent response to the thesis. Reuse existing primitives when they are healthy. Select a real design system because its interaction model, accessibility behavior, platform, and ecosystem fit the product - never because its screenshots resemble a moodboard. OTL is framework-independent: use the project's existing React, Vue, Svelte, plain HTML/CSS, native component system, or legacy stack unless a change is necessary and justified.
@@ -155,7 +159,7 @@ Copy is part of the interface. Use concrete user language and action labels. Rem
 
 For any substantial UI task, rendered review is a required completion step whenever a browser, preview, or screenshot tool is available. Record the evidence level and do not treat source inspection as a substitute.
 
-After implementation, open the running result and inspect it as a user. If the environment supports screenshots or browser automation, capture at least one representative desktop and one mobile viewport. Check the screenshots for hierarchy, balance, type, spacing, contrast, density, alignment, repetition, identity, and responsive degradation.
+After implementation, open the running result and inspect it as a user. If the environment supports screenshots or browser automation, capture at least one representative desktop and one mobile viewport, plus relevant states. Use one bounded review pass to inspect all target captures together, fix material findings in a batch, then run one confirmation pass. Check the screenshots for hierarchy, balance, type, spacing, contrast, density, alignment, repetition, identity, and responsive degradation.
 
 Code is not visual evidence. Rendered output is visual evidence. Never trust JSX, templates, CSS, or a clean detector result alone to validate visual design.
 
@@ -217,15 +221,16 @@ For any substantial surface, keep a compact working note with:
 
 1. facts and assumptions;
 2. Implementation Recon findings when the task is substantial;
-3. Design Read;
-4. selected axes and their consequences;
-5. Visual Thesis;
-6. composition map;
-7. page-level content inventory and primary home for each major entity;
-8. three to seven high-signal decisions with `choice`, `because`, and observable `check`;
-9. page-level IA preflight findings and disposition;
-10. visual and implementation QA targets, evidence status, and findings;
-11. corrections made.
+3. surface contract;
+4. Design Read;
+5. selected axes and their consequences;
+6. Visual Thesis;
+7. composition map;
+8. page-level content inventory and primary home for each major entity;
+9. three to seven high-signal decisions with `choice`, `because`, and observable `check`;
+10. page-level IA preflight findings and disposition;
+11. visual and implementation QA targets, evidence status, and findings;
+12. corrections made.
 
 Do not output this contract by default when the user only needs a small implementation. Use it to make the work coherent and auditable.
 

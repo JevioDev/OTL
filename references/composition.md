@@ -47,13 +47,21 @@ Set a section budget for the primary task. Every added region must earn its spac
 
 Run this check before visual polish and again after the page is populated:
 
-1. **Route check:** every global navigation item maps to a stable destination or documented product utility. A featured collection, campaign, or single record belongs in contextual navigation or content unless it is a true top-level area.
-2. **Entity repetition check:** list repeated records, collections, and people across the page. Keep a repeat only when its action or context changes; otherwise use one primary home and link back to it.
+1. **Route check:** every global navigation item maps to a product-level route or documented utility, not merely a section anchor. Keep global navigation to a small set of stable destinations. A featured collection, campaign, or single record belongs in contextual navigation or content unless it is a true top-level area.
+2. **Entity repetition check:** in the default state, each record, collection, or person has one primary presentation. A repeat needs an explicit secondary role and a different action or evidence; visual recasting alone does not qualify. Filtered results and related-record views may repeat entities after the user takes an action.
 3. **Region role check:** label each major region as navigation, content, evidence, utility, or promotion. If a decorative specimen or illustration can be mistaken for a record, label its role or remove it.
 4. **Space check:** every column, empty state, heading, and control must have a content or interaction role at the widest and narrowest tested widths.
 5. **Mobile affordance check:** when controls or content intentionally scroll horizontally, expose that behavior through clipping, spacing, arrows, or an accessible name; do not make overflow look accidental.
 
 Record failures as structural findings and resolve them before treatment refinements.
+
+## Cognitive load and surface topology
+
+Decide whether the surface primarily persuades, supports operation, enables reading, or lets the subject itself lead. The mode sets the burden of proof: an archive homepage may combine discovery and reading, but it still needs one dominant entry path.
+
+Keep the first view legible at a glance: one primary action, two or three secondary actions, and a small set of product-level navigation routes. Put exact record and collection names in contextual content or browse controls. Treat required content as a content inventory, not as a list of routes.
+
+When a page offers both a workbench and a curated record set, make the modes mutually clear. Prefer one primary record surface in the default state; show the other after a filter, in a distinct related view, or with a materially different task. Do not let component boundaries decide this relationship.
 
 ## Alignment and rhythm
 
