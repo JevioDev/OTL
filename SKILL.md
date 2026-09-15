@@ -221,9 +221,10 @@ For any substantial surface, keep a compact working note with:
 4. selected axes and their consequences;
 5. Visual Thesis;
 6. composition map;
-7. three to seven high-signal decisions with `choice`, `because`, and observable `check`;
-8. visual and implementation QA targets, evidence status, and findings;
-9. corrections made.
+7. page-level content inventory and primary home for each major entity;
+8. three to seven high-signal decisions with `choice`, `because`, and observable `check`;
+9. visual and implementation QA targets, evidence status, and findings;
+10. corrections made.
 
 Do not output this contract by default when the user only needs a small implementation. Use it to make the work coherent and auditable.
 

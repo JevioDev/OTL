@@ -39,6 +39,10 @@ Do not place a featured record in global navigation because it is visually promi
 
 For each major region, ask: what does this let the user do, what content model does it represent, and where should the user go next? Remove regions that have no distinct answer. Check the page as a whole for duplicated records, empty columns, orphaned headings, and controls that look like navigation but only decorate a feature.
 
+Before implementation, make a page-level content inventory. Mark each entity as a route, a reusable record, a collection, an editorial explanation, or a utility state. Give each entity a primary home and allow secondary appearances only when the surrounding action or context changes. This prevents a discovery page from repeating the same records merely to fill sections.
+
+Set a section budget for the primary task. Every added region must earn its space by introducing a new action, relationship, or piece of evidence. If two regions answer the same question, combine them or make their distinction explicit. Validate the complete page with realistic data before tuning individual components.
+
 ## Alignment and rhythm
 
 Choose an alignment system from the content. Left alignment often supports scanning and long labels; centered alignment can support a focused moment or ceremonial content; a mixed system can express an intentional relationship. Do not center content by habit.
