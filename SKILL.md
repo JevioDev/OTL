@@ -196,7 +196,7 @@ Read a reference only when the task makes it relevant:
 | Situation | Read |
 | --- | --- |
 | Selecting, pairing, loading, or changing typefaces | [references/typography.md](references/typography.md) |
-| Planning page hierarchy, grid, responsive layout, or section rhythm | [references/composition.md](references/composition.md) |
+| Planning page hierarchy, information architecture, grid, responsive layout, or section rhythm | [references/composition.md](references/composition.md) |
 | Defining palette, themes, semantic color, or contrast roles | [references/color.md](references/color.md) |
 | Adding, reviewing, or substantially changing animation | [references/motion.md](references/motion.md) |
 | Designing an interaction-heavy flow or direct manipulation | [references/interaction.md](references/interaction.md) |

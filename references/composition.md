@@ -26,6 +26,19 @@ For a substantial surface, sketch the masses rather than a component inventory. 
 
 This is a thinking tool, not a prescribed layout. The correct map may be a table, canvas, form sequence, article, split view, or a single focused action.
 
+## Information architecture boundaries
+
+Name the role of every prominent region before styling it. Keep these roles distinct:
+
+- **Global navigation:** stable routes that orient the whole product;
+- **Contextual navigation:** links or controls for the current collection, record, task, or location;
+- **Featured content:** selected material that represents the subject without becoming a route;
+- **Promotion:** an invitation or announcement whose purpose is to drive attention or conversion.
+
+Do not place a featured record in global navigation because it is visually prominent. Do not repeat the same entity across sections unless each appearance supports a different user task and adds clear context. A page map should make the relationship between routes, entities, and actions explicit.
+
+For each major region, ask: what does this let the user do, what content model does it represent, and where should the user go next? Remove regions that have no distinct answer. Check the page as a whole for duplicated records, empty columns, orphaned headings, and controls that look like navigation but only decorate a feature.
+
 ## Alignment and rhythm
 
 Choose an alignment system from the content. Left alignment often supports scanning and long labels; centered alignment can support a focused moment or ceremonial content; a mixed system can express an intentional relationship. Do not center content by habit.
@@ -76,3 +89,6 @@ Ask:
 - Could a section be grouped by spacing instead of a card or border?
 - Does each change in rhythm correspond to a change in meaning?
 - Does the mobile order still tell the same story?
+- Are global, contextual, featured, and promotional regions visibly and semantically distinct?
+- Does each repeated entity serve a different task with added context?
+- Does every grid column have a content or interaction role, including at narrow widths?
