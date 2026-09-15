@@ -4,7 +4,7 @@
 
 Most coding agents can write CSS. The harder problem is knowing why a visual decision belongs to one product and becomes generic in another.
 
-OTL gives coding agents a structured design reasoning process: understand the product, form a Visual Thesis, make decisions with a WHY Test, implement in the existing stack, and correct the rendered result.
+OTL gives coding agents a structured design reasoning process: understand the product and implementation context, form a Visual Thesis, make decisions with a WHY Test, implement in the existing stack, and correct the result through independent visual and implementation-quality gates.
 
 ## Why OTL exists
 
@@ -14,7 +14,7 @@ OTL addresses that failure through reasoning, not another set of style defaults.
 
 ## How it works
 
-`Understand -> Design Read -> Visual Thesis -> Shape -> Design Language -> Implement -> Rendered Review -> Correct`
+`Product Read + Implementation Recon -> Design Read -> Visual Thesis -> Shape -> Design Language -> Implement -> Visual Evidence Loop + Implementation Quality Gate -> Correct -> Ship`
 
 The **Visual Thesis** is one product-specific sentence describing how the interface should communicate. The **WHY Test** asks what product fact, user need, content property, or interaction requires each prominent decision. The rendered review then checks the result on actual desktop and mobile viewports when the environment permits it.
 
@@ -25,6 +25,7 @@ The **Visual Thesis** is one product-specific sentence describing how the interf
 - decisions need reasons;
 - anti-slop is diagnosis, not a blacklist;
 - rendered output is evidence;
+- implementation quality is a separate evidence layer;
 - specificity matters more than novelty.
 
 ## Example

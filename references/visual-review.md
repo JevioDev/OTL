@@ -1,6 +1,6 @@
 # Visual Review
 
-Visual review is an evidence loop after implementation, not a final compliment pass. A screenshot is evidence; source code is only an implementation hypothesis.
+Visual review is an evidence loop after implementation, not a final compliment pass. A screenshot is evidence; source code is only an implementation hypothesis. This is separate from the deterministic implementation audit in [web-quality.md](web-quality.md): visual evidence cannot prove semantics, state persistence, hydration, or runtime behavior, and source inspection cannot prove visual hierarchy or feel.
 
 ## Capture
 
@@ -61,5 +61,7 @@ The surface is ready when:
 - its Visual Thesis is visible in the composition without being explained;
 - the visual language is coherent but not mechanically repetitive;
 - content and states survive realistic length and responsive changes;
-- focus, contrast, semantics, keyboard use, and reduced motion meet the quality floor;
+- text, visible focus, contrast, and reduced-motion presentation remain usable;
 - at least one evidence-based correction has been made.
+
+The separate implementation quality gate must also confirm semantics, keyboard operation, state behavior, platform behavior, and runtime quality before the surface is called ship-ready.

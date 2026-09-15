@@ -1,6 +1,6 @@
 ---
 name: otl
-description: "Design judgment for coding agents: derive interface decisions from product context, build a coherent visual language, and validate the rendered result. Use for new UI, redesigns, design systems, and frontend polish; do not use it as a generic aesthetic preset."
+description: "Design judgment for coding agents: derive interface decisions from product context, build a coherent visual language, and validate rendered and implementation quality. Use for new UI, redesigns, design systems, and frontend polish; do not use it as a generic aesthetic preset."
 metadata:
   short-description: Context-led frontend design and visual QA
 ---
@@ -48,7 +48,11 @@ Treat a task as substantial when it changes a complete surface or flow, responsi
 
 ### 1. Understand
 
-Inspect the repository, running application, existing UI, dependencies, and assets before proposing a visual direction. Establish the following facts, marking assumptions explicitly:
+Start with two compact reads: the product context and the implementation context. Mark assumptions explicitly and do not treat an existing repository as an empty canvas.
+
+#### Product Read
+
+Establish:
 
 - product or subject matter;
 - audience, expertise, and use environment;
@@ -59,6 +63,17 @@ Inspect the repository, running application, existing UI, dependencies, and asse
 - platform, technical, accessibility, and performance constraints;
 - references supplied by the user and what they are evidence for;
 - existing versus new design work.
+
+#### Implementation Recon
+
+For a substantial implementation task, inspect only what will affect the decision:
+
+- framework, package manager, styling architecture, and installed dependencies;
+- existing design system, semantic tokens, component primitives, and ownership boundaries;
+- typography source, icon system, motion primitives, and accessibility primitives;
+- responsive conventions, routing/state conventions, and relevant documentation or source of truth.
+
+Record the useful constraints and extension points, not a giant inventory. This recon prevents a design decision from accidentally forking healthy behavior or solving a system problem with local overrides.
 
 If the repository contains an existing product, audit it before changing its visual language. Separate `KEEP`, `CHANGE`, `REMOVE`, and `INTRODUCE`, then define how the new direction will coexist with or migrate from the incumbent system. Do not discard a recognizable identity because it differs from personal taste.
 
@@ -90,6 +105,10 @@ Stronger: "Make invisible routing behavior understandable through directional re
 
 Spend boldness in one or a few places. If the thesis makes typography the identity, keep motion, backgrounds, and component silhouettes quieter. If the interaction is the expressive element, do not also make every surface loud.
 
+#### Optional divergence
+
+When the brief is ambiguous and the choice is high-value, explore 2-3 genuine directions before implementation. Name the axis of divergence: composition, hierarchy, density, interaction model, typography role, visual metaphor, or motion language. Changing only color, radius, shadow, or one font is cosmetic variation, not a new direction. Keep this optional for normal tasks.
+
 ### 4. Shape the composition
 
 Before choosing components, decide:
@@ -114,9 +133,11 @@ Read only the relevant references from the routing table below. Do not load ever
 
 Use the existing stack unless a change is necessary. Check dependencies before adding one. Keep semantic HTML, responsive behavior, actual content length, and states in scope: loading, empty, error, disabled, focus, and success where relevant. Do not add decorative complexity that cannot survive the content or the mobile layout.
 
+Before creating a new primitive, inspect existing components, variants, tokens, dependencies, and authoritative documentation. Preserve behavior and accessibility infrastructure while composing the presentation around it. Existing primitives own behavior; composition owns presentation. This does not require every surface to look like a library or a standard card.
+
 Copy is part of the interface. Use concrete user language and action labels. Remove filler such as "unlock the power of", "seamlessly", "next-generation", or "elevate" when it does not communicate a product fact.
 
-### 7. Review the rendered result
+### 7. Review the result
 
 For any substantial UI task, rendered review is a required completion step whenever a browser, preview, or screenshot tool is available. Record the evidence level and do not treat source inspection as a substitute.
 
@@ -124,7 +145,23 @@ After implementation, open the running result and inspect it as a user. If the e
 
 Code is not visual evidence. Rendered output is visual evidence. Never trust JSX, templates, CSS, or a clean detector result alone to validate visual design.
 
-Run one correction pass based on the evidence. Fix the highest-impact problem first, then capture or inspect again. If screenshots or browser automation are unavailable, use the closest available rendered preview and state the evidence level (`rendered preview reviewed` or `source-only - visual review blocked`); do not claim visual QA was completed from source code alone.
+#### VISUAL EVIDENCE LOOP
+
+`render -> inspect -> critique -> correct -> re-check`
+
+This loop owns hierarchy, composition, typography, rhythm, density, identity, responsive visual behavior, and accidental AI defaults. Correct in this order when useful: remove, simplify, recompose, clarify hierarchy, correct behavior, refine treatment, then add polish. Never polish a structurally weak decision.
+
+#### IMPLEMENTATION QUALITY GATE
+
+`inspect/test -> find deterministic defects -> fix -> verify`
+
+Run the gate separately from visual review for substantial production web UI. It owns semantics, interaction behavior, accessibility, content resilience, platform behavior, relevant performance, and state behavior. Use [references/web-quality.md](references/web-quality.md), [references/accessibility.md](references/accessibility.md), and [references/mobile-web.md](references/mobile-web.md) as relevant. A screenshot cannot prove these properties, and source inspection cannot prove visual quality.
+
+#### Content Stress Test
+
+Before shipping a substantial surface, test the cases that can change its geometry or meaning: long or localized text, empty content, missing media, large values, multiline content, loading, error, or a dense dataset. Test only states relevant to the surface. A composition validated only with ideal content has not been validated.
+
+Run both gates to completion. If screenshots or browser automation are unavailable, use the closest available rendered preview and state the evidence level (`rendered preview reviewed` or `source-only - visual review blocked`); do not claim visual QA was completed from source code alone.
 
 ### 8. Ship
 
@@ -140,26 +177,31 @@ Read a reference only when the task makes it relevant:
 | Planning page hierarchy, grid, responsive layout, or section rhythm | [references/composition.md](references/composition.md) |
 | Defining palette, themes, semantic color, or contrast roles | [references/color.md](references/color.md) |
 | Adding, reviewing, or substantially changing animation | [references/motion.md](references/motion.md) |
+| Designing an interaction-heavy flow or direct manipulation | [references/interaction.md](references/interaction.md) |
+| Reconciling an existing component ecosystem or creating a primitive | [references/component-systems.md](references/component-systems.md) |
 | Choosing Material, Fluent, Carbon, Primer, Polaris, Spectrum, GOV.UK, or another system | [references/design-systems.md](references/design-systems.md) |
 | Reviewing generic patterns or checking repeated work across projects | [references/anti-slop.md](references/anti-slop.md) |
 | Auditing an incumbent product or planning a redesign/migration | [references/redesign.md](references/redesign.md) |
-| Implementing or auditing keyboard, focus, contrast, semantics, touch, or reduced motion | [references/accessibility.md](references/accessibility.md) |
+| Implementing or auditing keyboard, focus, contrast, semantics, or reduced motion | [references/accessibility.md](references/accessibility.md) |
+| Implementing mobile/touch/PWA/platform behavior | [references/mobile-web.md](references/mobile-web.md) |
+| Shipping a substantial production web UI or running a deterministic implementation audit | [references/web-quality.md](references/web-quality.md) |
 | Performing the final rendered review or correction pass | [references/visual-review.md](references/visual-review.md) |
 
-For a redesign, read `redesign.md`, `anti-slop.md`, and `visual-review.md` together. For a new design system, read `design-systems.md` plus only the specific token references needed.
+For a redesign, read `redesign.md`, `anti-slop.md`, and `visual-review.md` together. For a new design system, read `design-systems.md` and `component-systems.md` plus only the specific token references needed. For substantial production web UI, pair `web-quality.md` with the platform and accessibility references that apply.
 
 ## Minimum internal contract
 
 For any substantial surface, keep a compact working note with:
 
 1. facts and assumptions;
-2. Design Read;
-3. selected axes and their consequences;
-4. Visual Thesis;
-5. composition map;
-6. three to seven high-signal decisions with their `because` tests;
-7. visual QA targets, evidence status, and findings;
-8. corrections made.
+2. Implementation Recon findings when the task is substantial;
+3. Design Read;
+4. selected axes and their consequences;
+5. Visual Thesis;
+6. composition map;
+7. three to seven high-signal decisions with their `because` tests;
+8. visual and implementation QA targets, evidence status, and findings;
+9. corrections made.
 
 Do not output this contract by default when the user only needs a small implementation. Use it to make the work coherent and auditable.
 
@@ -169,5 +211,6 @@ Do not output this contract by default when the user only needs a small implemen
 - Never reject a typeface, color, layout, or library only because it is popular or familiar.
 - Do not use cards, pills, gradients, labels, numbering, borders, shadows, or monospace as decoration without a content or interaction role.
 - Avoid repeated hero, section, typography, component, and animation patterns across unrelated work unless the product genuinely shares the same need.
+- Existing primitives own behavior; composition owns presentation. System consistency must not become visual conformity.
 - Accessibility is the quality floor, not an aesthetic direction.
-- A clean detector or lint result cannot replace a rendered visual review.
+- A clean detector or lint result cannot replace a rendered visual review, and a good screenshot cannot replace an implementation quality audit.
