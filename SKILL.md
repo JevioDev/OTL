@@ -1,0 +1,158 @@
+---
+name: otl-design
+description: Design and implement web interfaces through context-led visual reasoning, distinctive design language, and a mandatory rendered-review pass. Use for new UI, redesigns, design systems, and frontend polish; do not use it as a generic aesthetic preset.
+metadata:
+  short-description: Context-led frontend design and visual QA
+---
+
+# OTL Design
+
+OTL is a design reasoning skill for coding agents. It helps an agent make visual decisions that belong to the product, audience, content, and use context instead of repeating a familiar AI interface pattern.
+
+The name honors Otl Aicher. Carry forward his respect for legibility, systems, and meaningful signs; do not turn Swiss typography, strict grids, or any other historical style into an OTL default.
+
+## Operating principle
+
+Design must emerge from context. Every noticeable decision is a hypothesis about what helps this product work. Before implementation, the agent should be able to complete:
+
+> I chose X because Y about this product, user, content, or interaction requires it.
+
+This is an internal quality test, not a requirement to expose a design essay to the user. When the sentence cannot be completed without saying that something is modern, premium, clean, creative, or fashionable, revisit the decision.
+
+Do not turn the skill's anti-patterns into permanent bans. A centered hero, a card, a gradient, a serif, a monospace face, or an established design system is correct when the context earns it. The question is whether the same choice would be made for an unrelated product.
+
+## When to use this skill
+
+Use this skill when an agent is asked to:
+
+- build or redesign a web page, product surface, dashboard, website, or frontend flow;
+- establish or repair a visual system, component language, or responsive composition;
+- improve visual quality, distinctiveness, hierarchy, motion, or interaction polish;
+- review an implemented interface and make it ship-ready.
+
+For a small, purely mechanical UI edit, apply only the relevant principles and do not invent a full design process.
+
+## Workflow
+
+### 1. Understand
+
+Inspect the repository, running application, existing UI, dependencies, and assets before proposing a visual direction. Establish the following facts, marking assumptions explicitly:
+
+- product or subject matter;
+- audience, expertise, and use environment;
+- primary user goal and most important action;
+- surface type and information hierarchy;
+- content characteristics, including length, density, language, and data variability;
+- incumbent visual language and recognizable brand assets;
+- platform, technical, accessibility, and performance constraints;
+- references supplied by the user and what they are evidence for;
+- existing versus new design work.
+
+If the repository contains an existing product, audit it before changing its visual language. Separate `KEEP`, `CHANGE`, `REMOVE`, and `INTRODUCE`. Do not discard a recognizable identity because it differs from personal taste.
+
+If a missing fact would lead to two materially different design directions, ask one short question. Otherwise infer conservatively and proceed.
+
+### 2. Write a Design Read
+
+Describe the interface's character in one or two sentences without naming CSS treatments. Include the audience tension it must resolve. For example: "A developer-facing network utility that must feel technically credible while remaining legible to operators who do not think in network primitives."
+
+Then set a small set of design axes from 0 to 5. Use the axes to change decisions, not to decorate a plan:
+
+| Axis | Low end | High end |
+| --- | --- | --- |
+| Compositional variance | predictable alignment and repeated regions | deliberate shifts, asymmetry, or editorial pacing |
+| Information density | spacious, few simultaneous choices | compact, comparison-oriented, data-rich |
+| Expression | quiet and transparent | visibly authored and emotionally specific |
+| Motion intensity | static or feedback-only | choreographed transitions and spatial continuity |
+| UI familiarity | conventional controls and patterns | novel interaction or custom visual grammar |
+
+Choose only axes that affect the surface. High expression or variance never excuses weak hierarchy. High familiarity is often the right decision for critical or repeated workflows.
+
+### 3. Define a Visual Thesis
+
+Write one product-specific sentence before coding. It should describe the visual mechanism and the job it performs, not a mood word. A useful thesis names the subject, the user need, and the source of visual character.
+
+Weak: "A modern, premium, minimal interface."
+
+Stronger: "Make invisible routing behavior understandable through directional relationships and calm operational surfaces, so a non-specialist can diagnose a path without reading a network diagram."
+
+Spend boldness in one or a few places. If the thesis makes typography the identity, keep motion, backgrounds, and component silhouettes quieter. If the interaction is the expressive element, do not also make every surface loud.
+
+### 4. Shape the composition
+
+Before choosing components, decide:
+
+- what the eye sees first and why;
+- the reading and action order;
+- dominant and supporting visual masses;
+- where space expands, compresses, or becomes quiet;
+- the alignment system, grid behavior, and any intentional tension;
+- how the composition transforms on small screens;
+- which content deserves grouping and which should remain unboxed.
+
+Components serve composition. Composition must not become a container for a library of components. Sketch a rough page map or wireframe when the surface is substantial.
+
+### 5. Build a design language
+
+Choose typography, color roles, spacing, shape, borders, elevation, iconography, and motion as a coherent response to the thesis. Reuse existing primitives when they are healthy. Select a real design system because its interaction model, accessibility behavior, platform, and ecosystem fit the product - never because its screenshots resemble a moodboard.
+
+Read only the relevant references from the routing table below. Do not load every reference by default.
+
+### 6. Implement with discipline
+
+Use the existing stack unless a change is necessary. Check dependencies before adding one. Keep semantic HTML, responsive behavior, actual content length, and states in scope: loading, empty, error, disabled, focus, and success where relevant. Do not add decorative complexity that cannot survive the content or the mobile layout.
+
+Copy is part of the interface. Use concrete user language and action labels. Remove filler such as "unlock the power of", "seamlessly", "next-generation", or "elevate" when it does not communicate a product fact.
+
+### 7. Review the rendered result
+
+After implementation, open the running result and inspect it as a user. If the environment supports screenshots or browser automation, capture at least one representative desktop and one mobile viewport. Check the screenshots for hierarchy, balance, type, spacing, contrast, density, alignment, repetition, identity, and responsive degradation.
+
+Never trust code alone to validate visual design. A screenshot is evidence; JSX, templates, and CSS are implementation hypotheses.
+
+Run one correction pass based on the evidence. Fix the highest-impact problem first, then capture or inspect again. If screenshots are unavailable, use the closest available rendered preview and state that limitation; do not claim visual QA was completed from source code alone.
+
+### 8. Ship
+
+Before finishing, confirm that the final surface has a clear dominant element, a stable hierarchy, usable controls, realistic content behavior, accessible focus and contrast, reduced-motion behavior, and one coherent visual language. Remove one unnecessary flourish during the final pass.
+
+## Progressive disclosure
+
+Read a reference only when the task makes it relevant:
+
+| Situation | Read |
+| --- | --- |
+| Selecting, pairing, loading, or changing typefaces | [references/typography.md](references/typography.md) |
+| Planning page hierarchy, grid, responsive layout, or section rhythm | [references/composition.md](references/composition.md) |
+| Defining palette, themes, semantic color, or contrast roles | [references/color.md](references/color.md) |
+| Adding, reviewing, or substantially changing animation | [references/motion.md](references/motion.md) |
+| Choosing Material, Fluent, Carbon, Primer, Polaris, Spectrum, GOV.UK, or another system | [references/design-systems.md](references/design-systems.md) |
+| Reviewing generic patterns, redesigning, or checking repeated work across projects | [references/anti-slop.md](references/anti-slop.md) |
+| Implementing or auditing keyboard, focus, contrast, semantics, touch, or reduced motion | [references/accessibility.md](references/accessibility.md) |
+| Performing the final rendered review or correction pass | [references/visual-review.md](references/visual-review.md) |
+
+For a redesign, read `anti-slop.md` and `visual-review.md` together. For a new design system, read `design-systems.md` plus only the specific token references needed.
+
+## Minimum internal contract
+
+For any substantial surface, keep a compact working note with:
+
+1. facts and assumptions;
+2. Design Read;
+3. selected axes and their consequences;
+4. Visual Thesis;
+5. composition map;
+6. three to seven high-signal decisions with their `because` tests;
+7. visual QA targets, evidence status, and findings;
+8. corrections made.
+
+Do not output this contract by default when the user only needs a small implementation. Use it to make the work coherent and auditable.
+
+## Hard quality rules
+
+- Context outranks habit, trend, library defaults, and the skill author's taste.
+- Never reject a typeface, color, layout, or library only because it is popular or familiar.
+- Do not use cards, pills, gradients, labels, numbering, borders, shadows, or monospace as decoration without a content or interaction role.
+- Avoid repeated hero, section, typography, component, and animation patterns across unrelated work unless the product genuinely shares the same need.
+- Accessibility is the quality floor, not an aesthetic direction.
+- A clean detector or lint result cannot replace a rendered visual review.

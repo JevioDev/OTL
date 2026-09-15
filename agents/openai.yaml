@@ -1,0 +1,8 @@
+interface:
+  display_name: "OTL Design"
+  short_description: "Context-led frontend design and visual QA"
+  brand_color: "#1A1A1A"
+  default_prompt: "Use $otl-design to shape and implement this interface from product context, then review the rendered result visually."
+
+policy:
+  allow_implicit_invocation: true
