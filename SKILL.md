@@ -163,7 +163,7 @@ Code is not visual evidence. Rendered output is visual evidence. Never trust JSX
 
 `render -> inspect -> critique -> correct -> re-check`
 
-This loop owns hierarchy, composition, typography, rhythm, density, identity, responsive visual behavior, and accidental AI defaults. Correct in this order when useful: remove, simplify, recompose, clarify hierarchy, correct behavior, refine treatment, then add polish. Never polish a structurally weak decision.
+This loop owns hierarchy, information architecture, composition, typography, rhythm, density, identity, responsive visual behavior, and accidental AI defaults. Correct in this order when useful: remove, simplify, recompose, clarify hierarchy, correct behavior, refine treatment, then add polish. Never polish a structurally weak decision.
 
 #### IMPLEMENTATION QUALITY GATE
 
@@ -196,7 +196,7 @@ Read a reference only when the task makes it relevant:
 | Situation | Read |
 | --- | --- |
 | Selecting, pairing, loading, or changing typefaces | [references/typography.md](references/typography.md) |
-| Planning page hierarchy, grid, responsive layout, or section rhythm | [references/composition.md](references/composition.md) |
+| Planning page hierarchy, information architecture, grid, responsive layout, or section rhythm | [references/composition.md](references/composition.md) |
 | Defining palette, themes, semantic color, or contrast roles | [references/color.md](references/color.md) |
 | Adding, reviewing, or substantially changing animation | [references/motion.md](references/motion.md) |
 | Designing an interaction-heavy flow or direct manipulation | [references/interaction.md](references/interaction.md) |
@@ -221,9 +221,11 @@ For any substantial surface, keep a compact working note with:
 4. selected axes and their consequences;
 5. Visual Thesis;
 6. composition map;
-7. three to seven high-signal decisions with `choice`, `because`, and observable `check`;
-8. visual and implementation QA targets, evidence status, and findings;
-9. corrections made.
+7. page-level content inventory and primary home for each major entity;
+8. three to seven high-signal decisions with `choice`, `because`, and observable `check`;
+9. page-level IA preflight findings and disposition;
+10. visual and implementation QA targets, evidence status, and findings;
+11. corrections made.
 
 Do not output this contract by default when the user only needs a small implementation. Use it to make the work coherent and auditable.
 
