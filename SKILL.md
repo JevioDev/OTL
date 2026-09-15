@@ -1,15 +1,15 @@
 ---
-name: otl-design
-description: Design and implement web interfaces through context-led visual reasoning, distinctive design language, and a mandatory rendered-review pass. Use for new UI, redesigns, design systems, and frontend polish; do not use it as a generic aesthetic preset.
+name: otl
+description: "Design judgment for coding agents: derive interface decisions from product context, build a coherent visual language, and validate the rendered result. Use for new UI, redesigns, design systems, and frontend polish; do not use it as a generic aesthetic preset."
 metadata:
   short-description: Context-led frontend design and visual QA
 ---
 
-# OTL Design
+# OTL
 
 OTL is a design reasoning skill for coding agents. It helps an agent make visual decisions that belong to the product, audience, content, and use context instead of repeating a familiar AI interface pattern.
 
-The name honors Otl Aicher. Carry forward his respect for legibility, systems, and meaningful signs; do not turn Swiss typography, strict grids, or any other historical style into an OTL default.
+The name honors Otl Aicher. Carry forward his respect for legibility, systems, and meaningful signs; do not turn Swiss typography, strict grids, or any other historical style into an OTL default. The inspiration is philosophical, not stylistic: OTL borrows systems thinking, not Swiss aesthetics.
 
 ## Operating principle
 
@@ -21,16 +21,28 @@ This is an internal quality test, not a requirement to expose a design essay to 
 
 Do not turn the skill's anti-patterns into permanent bans. A centered hero, a card, a gradient, a serif, a monospace face, or an established design system is correct when the context earns it. The question is whether the same choice would be made for an unrelated product.
 
+### WHY Test
+
+For every prominent choice, ask:
+
+- What product fact, user need, content property, or interaction requires this choice?
+- Is it encoding information, hierarchy, interaction, identity, or useful pacing?
+- Would I make the same decision for an unrelated product?
+- Would removing it improve the composition or make the task less clear?
+
+If the answer collapses to "modern", "premium", "clean", "creative", or "on trend", treat the choice as unproven. Keep the test internal unless the user asks for the reasoning.
+
 ## When to use this skill
 
 Use this skill when an agent is asked to:
 
 - build or redesign a web page, product surface, dashboard, website, or frontend flow;
+- improve a real product UI such as an operational workflow, form, table, editor, settings area, or mobile flow;
 - establish or repair a visual system, component language, or responsive composition;
 - improve visual quality, distinctiveness, hierarchy, motion, or interaction polish;
 - review an implemented interface and make it ship-ready.
 
-For a small, purely mechanical UI edit, apply only the relevant principles and do not invent a full design process.
+Treat a task as substantial when it changes a complete surface or flow, responsive composition, visual system, or more than one interactive state. For a small, purely mechanical UI edit, apply only the relevant principles and do not invent a full design process.
 
 ## Workflow
 
@@ -48,7 +60,7 @@ Inspect the repository, running application, existing UI, dependencies, and asse
 - references supplied by the user and what they are evidence for;
 - existing versus new design work.
 
-If the repository contains an existing product, audit it before changing its visual language. Separate `KEEP`, `CHANGE`, `REMOVE`, and `INTRODUCE`. Do not discard a recognizable identity because it differs from personal taste.
+If the repository contains an existing product, audit it before changing its visual language. Separate `KEEP`, `CHANGE`, `REMOVE`, and `INTRODUCE`, then define how the new direction will coexist with or migrate from the incumbent system. Do not discard a recognizable identity because it differs from personal taste.
 
 If a missing fact would lead to two materially different design directions, ask one short question. Otherwise infer conservatively and proceed.
 
@@ -94,7 +106,7 @@ Components serve composition. Composition must not become a container for a libr
 
 ### 5. Build a design language
 
-Choose typography, color roles, spacing, shape, borders, elevation, iconography, and motion as a coherent response to the thesis. Reuse existing primitives when they are healthy. Select a real design system because its interaction model, accessibility behavior, platform, and ecosystem fit the product - never because its screenshots resemble a moodboard.
+Choose typography, color roles, spacing, shape, borders, elevation, iconography, and motion as a coherent response to the thesis. Reuse existing primitives when they are healthy. Select a real design system because its interaction model, accessibility behavior, platform, and ecosystem fit the product - never because its screenshots resemble a moodboard. OTL is framework-independent: use the project's existing React, Vue, Svelte, plain HTML/CSS, native component system, or legacy stack unless a change is necessary and justified.
 
 Read only the relevant references from the routing table below. Do not load every reference by default.
 
@@ -106,15 +118,17 @@ Copy is part of the interface. Use concrete user language and action labels. Rem
 
 ### 7. Review the rendered result
 
+For any substantial UI task, rendered review is a required completion step whenever a browser, preview, or screenshot tool is available. Record the evidence level and do not treat source inspection as a substitute.
+
 After implementation, open the running result and inspect it as a user. If the environment supports screenshots or browser automation, capture at least one representative desktop and one mobile viewport. Check the screenshots for hierarchy, balance, type, spacing, contrast, density, alignment, repetition, identity, and responsive degradation.
 
-Never trust code alone to validate visual design. A screenshot is evidence; JSX, templates, and CSS are implementation hypotheses.
+Code is not visual evidence. Rendered output is visual evidence. Never trust JSX, templates, CSS, or a clean detector result alone to validate visual design.
 
-Run one correction pass based on the evidence. Fix the highest-impact problem first, then capture or inspect again. If screenshots are unavailable, use the closest available rendered preview and state that limitation; do not claim visual QA was completed from source code alone.
+Run one correction pass based on the evidence. Fix the highest-impact problem first, then capture or inspect again. If screenshots or browser automation are unavailable, use the closest available rendered preview and state the evidence level (`rendered preview reviewed` or `source-only - visual review blocked`); do not claim visual QA was completed from source code alone.
 
 ### 8. Ship
 
-Before finishing, confirm that the final surface has a clear dominant element, a stable hierarchy, usable controls, realistic content behavior, accessible focus and contrast, reduced-motion behavior, and one coherent visual language. Remove one unnecessary flourish during the final pass.
+Before finishing, confirm that the final surface has a clear dominant element, a stable hierarchy, usable controls, realistic content behavior, accessible focus and contrast, reduced-motion behavior, and one coherent visual language. Remove or justify any non-essential flourish during the final pass.
 
 ## Progressive disclosure
 
@@ -127,11 +141,12 @@ Read a reference only when the task makes it relevant:
 | Defining palette, themes, semantic color, or contrast roles | [references/color.md](references/color.md) |
 | Adding, reviewing, or substantially changing animation | [references/motion.md](references/motion.md) |
 | Choosing Material, Fluent, Carbon, Primer, Polaris, Spectrum, GOV.UK, or another system | [references/design-systems.md](references/design-systems.md) |
-| Reviewing generic patterns, redesigning, or checking repeated work across projects | [references/anti-slop.md](references/anti-slop.md) |
+| Reviewing generic patterns or checking repeated work across projects | [references/anti-slop.md](references/anti-slop.md) |
+| Auditing an incumbent product or planning a redesign/migration | [references/redesign.md](references/redesign.md) |
 | Implementing or auditing keyboard, focus, contrast, semantics, touch, or reduced motion | [references/accessibility.md](references/accessibility.md) |
 | Performing the final rendered review or correction pass | [references/visual-review.md](references/visual-review.md) |
 
-For a redesign, read `anti-slop.md` and `visual-review.md` together. For a new design system, read `design-systems.md` plus only the specific token references needed.
+For a redesign, read `redesign.md`, `anti-slop.md`, and `visual-review.md` together. For a new design system, read `design-systems.md` plus only the specific token references needed.
 
 ## Minimum internal contract
 
