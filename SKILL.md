@@ -44,6 +44,16 @@ Use this skill when an agent is asked to:
 
 Treat a task as substantial when it changes a complete surface or flow, responsive composition, visual system, or more than one interactive state. For a small, purely mechanical UI edit, apply only the relevant principles and do not invent a full design process.
 
+### Size the task before choosing the process
+
+Use the lightest process that can answer the design question:
+
+- **Small edit:** one localized style, copy, spacing, or state change. Inspect the owning component and nearby tokens, apply the relevant WHY Test, then run the narrowest useful check.
+- **Substantial surface:** a page, flow, responsive composition, visual-system change, or multiple states. Use the full workflow and both quality gates.
+- **Unclear scope:** begin with a short recon. Promote the task to substantial if the change affects hierarchy, responsive behavior, shared primitives, or more than one state.
+
+Do not produce a design brief for a small edit. Do not compress a substantial redesign into a collection of local CSS tweaks.
+
 ## Workflow
 
 ### 1. Understand
@@ -95,6 +105,8 @@ Then set a small set of design axes from 0 to 5. Use the axes to change decision
 
 Choose only axes that affect the surface. High expression or variance never excuses weak hierarchy. High familiarity is often the right decision for critical or repeated workflows.
 
+For each selected axis, write the consequence in plain language (for example, “high density means comparison rows need stronger scan anchors”). If an axis does not change a later decision, remove it.
+
 ### 3. Define a Visual Thesis
 
 Write one product-specific sentence before coding. It should describe the visual mechanism and the job it performs, not a mood word. A useful thesis names the subject, the user need, and the source of visual character.
@@ -104,6 +116,8 @@ Weak: "A modern, premium, minimal interface."
 Stronger: "Make invisible routing behavior understandable through directional relationships and calm operational surfaces, so a non-specialist can diagnose a path without reading a network diagram."
 
 Spend boldness in one or a few places. If the thesis makes typography the identity, keep motion, backgrounds, and component silhouettes quieter. If the interaction is the expressive element, do not also make every surface loud.
+
+Turn the thesis into a short decision ledger before coding. Record three to seven high-signal decisions, each with `choice`, `because`, and `check`. The check must be observable in the rendered result or implementation (for example, “long labels remain scannable at 320px”). This keeps the thesis operational instead of rhetorical.
 
 #### Optional divergence
 
@@ -163,6 +177,14 @@ Before shipping a substantial surface, test the cases that can change its geomet
 
 Run both gates to completion. If screenshots or browser automation are unavailable, use the closest available rendered preview and state the evidence level (`rendered preview reviewed` or `source-only - visual review blocked`); do not claim visual QA was completed from source code alone.
 
+Classify findings before correcting them:
+
+1. **Structural:** wrong hierarchy, broken responsive composition, missing state, or unusable interaction. Fix first.
+2. **Legibility:** type scale, contrast, wrapping, focus visibility, or density problems.
+3. **Treatment:** color nuance, border, radius, shadow, icon alignment, or motion refinement.
+
+After each correction, re-check the affected viewport and state. Stop when the decision ledger checks pass, no structural or legibility findings remain, and treatment changes would be preference-only.
+
 ### 8. Ship
 
 Before finishing, confirm that the final surface has a clear dominant element, a stable hierarchy, usable controls, realistic content behavior, accessible focus and contrast, reduced-motion behavior, and one coherent visual language. Remove or justify any non-essential flourish during the final pass.
@@ -204,6 +226,8 @@ For any substantial surface, keep a compact working note with:
 9. corrections made.
 
 Do not output this contract by default when the user only needs a small implementation. Use it to make the work coherent and auditable.
+
+For small edits, collapse this to three notes: affected component and constraint, the WHY Test for the change, and the verification performed.
 
 ## Hard quality rules
 
