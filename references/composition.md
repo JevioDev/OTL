@@ -43,6 +43,18 @@ Before implementation, make a page-level content inventory. Mark each entity as 
 
 Set a section budget for the primary task. Every added region must earn its space by introducing a new action, relationship, or piece of evidence. If two regions answer the same question, combine them or make their distinction explicit. Validate the complete page with realistic data before tuning individual components.
 
+### Page-level IA preflight
+
+Run this check before visual polish and again after the page is populated:
+
+1. **Route check:** every global navigation item maps to a stable destination or documented product utility. A featured collection, campaign, or single record belongs in contextual navigation or content unless it is a true top-level area.
+2. **Entity repetition check:** list repeated records, collections, and people across the page. Keep a repeat only when its action or context changes; otherwise use one primary home and link back to it.
+3. **Region role check:** label each major region as navigation, content, evidence, utility, or promotion. If a decorative specimen or illustration can be mistaken for a record, label its role or remove it.
+4. **Space check:** every column, empty state, heading, and control must have a content or interaction role at the widest and narrowest tested widths.
+5. **Mobile affordance check:** when controls or content intentionally scroll horizontally, expose that behavior through clipping, spacing, arrows, or an accessible name; do not make overflow look accidental.
+
+Record failures as structural findings and resolve them before treatment refinements.
+
 ## Alignment and rhythm
 
 Choose an alignment system from the content. Left alignment often supports scanning and long labels; centered alignment can support a focused moment or ceremonial content; a mixed system can express an intentional relationship. Do not center content by habit.

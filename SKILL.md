@@ -163,7 +163,7 @@ Code is not visual evidence. Rendered output is visual evidence. Never trust JSX
 
 `render -> inspect -> critique -> correct -> re-check`
 
-This loop owns hierarchy, composition, typography, rhythm, density, identity, responsive visual behavior, and accidental AI defaults. Correct in this order when useful: remove, simplify, recompose, clarify hierarchy, correct behavior, refine treatment, then add polish. Never polish a structurally weak decision.
+This loop owns hierarchy, information architecture, composition, typography, rhythm, density, identity, responsive visual behavior, and accidental AI defaults. Correct in this order when useful: remove, simplify, recompose, clarify hierarchy, correct behavior, refine treatment, then add polish. Never polish a structurally weak decision.
 
 #### IMPLEMENTATION QUALITY GATE
 
@@ -223,8 +223,9 @@ For any substantial surface, keep a compact working note with:
 6. composition map;
 7. page-level content inventory and primary home for each major entity;
 8. three to seven high-signal decisions with `choice`, `because`, and observable `check`;
-9. visual and implementation QA targets, evidence status, and findings;
-10. corrections made.
+9. page-level IA preflight findings and disposition;
+10. visual and implementation QA targets, evidence status, and findings;
+11. corrections made.
 
 Do not output this contract by default when the user only needs a small implementation. Use it to make the work coherent and auditable.
 
