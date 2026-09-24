@@ -49,9 +49,7 @@ Review in this order so low-impact polish does not distract from structural prob
 
 ## Correction protocol
 
-Write no more than three findings for the first pass, ordered by impact. Each finding should describe the visible problem, why it matters to the user's task, and the smallest useful correction. Fix the highest-impact finding, then re-check all affected viewports and states.
-
-Do at least one correction pass for any substantial UI change. Stop when the hierarchy is clear, the correction no longer creates a new problem, and remaining differences are intentional tradeoffs rather than unexamined defaults.
+Capture representative states and identify all material structural and legibility findings in one pass. Fix those findings in one batch, then run at most one confirmation pass over the same viewports and states. Treat treatment-only findings as optional; address them only when the change materially improves the result. Stop when no material unresolved structural or legibility finding remains and remaining differences are intentional tradeoffs rather than unexamined defaults. If no material finding exists, do not make a correction for the sake of completing the protocol.
 
 If browser or screenshot tooling is unavailable, inspect the closest rendered preview and report the limitation. Do not claim that source inspection is equivalent to visual QA.
 
@@ -64,6 +62,6 @@ The surface is ready when:
 - the visual language is coherent but not mechanically repetitive;
 - content and states survive realistic length and responsive changes;
 - text, visible focus, contrast, and reduced-motion presentation remain usable;
-- at least one evidence-based correction has been made.
+- material findings have been resolved or explicitly blocked/out of scope; no correction is required when the review finds none.
 
 The separate implementation quality gate must also confirm semantics, keyboard operation, state behavior, platform behavior, and runtime quality before the surface is called ship-ready.

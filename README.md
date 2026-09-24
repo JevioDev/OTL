@@ -6,7 +6,7 @@ Most coding agents can write CSS. The harder problem is knowing why a visual dec
 
 OTL gives coding agents a structured design reasoning process: understand the product and implementation context, form a Visual Thesis, make decisions with a WHY Test, implement in the existing stack, and correct the result through independent visual and implementation-quality gates.
 
-The process scales to the work: localized edits use a compact constraint/WHY/verification pass, while substantial surfaces use the full workflow, a decision ledger, content stress tests, and both quality gates.
+The process scales to the work: localized edits use a compact constraint/WHY/verification pass, while substantial surfaces use a routed playbook with a decision ledger, relevant content checks, and the visual and implementation gates that apply.
 
 ## Why OTL exists
 
