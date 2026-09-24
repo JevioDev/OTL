@@ -12,8 +12,8 @@ Use when the requested screen, page, or flow has no sufficient incumbent visual 
 
 ## Load
 
-Always load `references/composition.md` and `references/anti-slop.md`. Add `typography`, `color`, `interaction`, `accessibility`, `mobile-web`, or `component-systems` only when those decisions are material.
+Load `references/composition.md` by default for a full surface. Add `anti-slop` when establishing a visual language or genericity is a material risk; add `typography`, `color`, `interaction`, `accessibility`, `mobile-web`, or `component-systems` only when those decisions are material.
 
 ## Stop
 
-Stop after one bounded rendered review, one batch of material corrections, and at most one confirmation pass. Stop when structural and legibility findings are resolved or explicitly blocked/out of scope, and the evidence matrix supports every required capability.
+Stop after one bounded rendered review, one batch of material corrections, and at most one confirmation pass. Stop when structural and legibility findings are resolved or explicitly blocked/out of scope, and Evidence records each required capability as proven, partial, unverified, or blocked.

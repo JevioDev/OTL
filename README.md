@@ -16,7 +16,7 @@ OTL addresses that failure through reasoning, not another set of style defaults.
 
 ## How it works
 
-`Product Read + Implementation Recon -> Design Read -> Visual Thesis -> Shape -> Design Language -> Implement -> Visual Evidence Loop + Implementation Quality Gate -> Correct -> Ship`
+`Context -> Visual Thesis -> justified decisions -> Shape -> Implement -> Evidence`
 
 The process is routed by task class: `Local edit`, `Refine`, `Redesign`, `New surface`, `Design system`, or `Review`. Non-local work uses a matching playbook, while references are loaded only when their domain knowledge can affect the current decision.
 
@@ -27,7 +27,7 @@ The **Visual Thesis** is one product-specific sentence describing how the interf
 - context before aesthetics;
 - composition before components;
 - information architecture before visual prominence;
-- surface contracts and bounded review before polish;
+- compact reasoning and bounded review before polish;
 - evidence layers and claim discipline;
 - decisions need reasons;
 - anti-slop is diagnosis, not a blacklist;
@@ -53,17 +53,18 @@ git clone https://github.com/JevioDev/OTL.git
 - **Codex:** `~/.codex/skills/otl/` (on Windows: `%USERPROFILE%\\.codex\\skills\\otl\\`)
 - **Cursor:** `.cursor/skills/otl/`
 
-The same folder works across hosts: keep `SKILL.md`, `references/`, and `agents/` together. After installation, invoke it as `$otl` where the host supports explicit skill invocation. If you installed an earlier release, update its invocation to `$otl`.
+The same folder works across hosts: keep `SKILL.md`, `playbooks/`, `references/`, and `agents/` together. After installation, invoke it as `$otl` where the host supports explicit skill invocation. If you installed an earlier release, update its invocation to `$otl`.
 
 ## Structure
 
 ```text
-SKILL.md       entrypoint and workflow
-references/    task-specific guidance, loaded progressively
+SKILL.md       shared reasoning primitives and routing
+playbooks/     task-specific process and stop conditions
+references/    domain knowledge, loaded progressively
 agents/        host UI metadata
 ```
 
-References are intentionally split by decision type. Load only the files relevant to the current task; redesigns additionally use `redesign.md`, `anti-slop.md`, and `visual-review.md`.
+References are intentionally split by decision type. Load only the files relevant to the current task; playbooks select the minimum reference set.
 
 ## Why Otl Aicher
 
