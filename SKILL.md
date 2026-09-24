@@ -183,6 +183,8 @@ Run both gates to completion. If screenshots or browser automation are unavailab
 
 Keep an evidence matrix for substantial surfaces. For each material capability, record the strongest evidence actually obtained, its status (`proven`, `partial`, `unverified`, or `blocked`), and the remaining limitation. Static presence, build success, runtime behavior, rendered appearance, IA topology, and accessibility are separate evidence layers. A report must not use one layer to claim another.
 
+For stateful surfaces, include named scenario coverage in the matrix: entry, discovery/input, inspection, recovery, responsive, and keyboard/accessibility as applicable. A feature is not runtime-proven because its handler or label appears in source.
+
 Classify findings before correcting them:
 
 1. **Structural:** wrong hierarchy, broken responsive composition, missing state, or unusable interaction. Fix first.
@@ -232,8 +234,9 @@ For any substantial surface, keep a compact working note with:
 9. three to seven high-signal decisions with `choice`, `because`, and observable `check`;
 10. page-level IA preflight findings and disposition;
 11. evidence matrix and claim audit;
-12. visual and implementation QA targets, evidence status, and findings;
-13. corrections made.
+12. named scenario coverage and results;
+13. visual and implementation QA targets, evidence status, and findings;
+14. corrections made.
 
 Do not output this contract by default when the user only needs a small implementation. Use it to make the work coherent and auditable.
 

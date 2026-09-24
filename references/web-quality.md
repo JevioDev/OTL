@@ -27,6 +27,19 @@ Use statuses such as `proven`, `partial`, `unverified`, or `blocked`. A claim mu
 
 When reporting a checklist, keep one canonical list of checks and derive the reported total from that list. The displayed count must equal the number of listed checks; do not report a passing total that includes checks not shown.
 
+## Minimum scenario coverage
+
+For a stateful surface, define named scenarios before testing. Use only the scenarios relevant to the product, but cover each material interaction category at least once:
+
+- **Entry:** first load and the primary action;
+- **Discovery or input:** search, filter, sort, navigation, or form submission;
+- **Inspection:** detail, drawer, modal, expansion, or cross-reference;
+- **Recovery:** reset, empty result, error, cancel, or retry;
+- **Responsive:** the same primary task at the target mobile width;
+- **Keyboard/accessibility:** focus, operation, and dismissal for the key flow.
+
+Record scenario results separately from static requirement checks. A scenario counts as `proven` only when the action was exercised and the resulting state was observed. A source assertion that a handler exists is not a scenario result.
+
 ## Semantics and interaction
 
 - Use native semantic elements before recreating their semantics with ARIA or generic containers.
