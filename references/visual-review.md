@@ -2,6 +2,8 @@
 
 Visual review is an evidence loop after implementation, not a final compliment pass. A screenshot is evidence; source code is only an implementation hypothesis. This is separate from the deterministic implementation audit in [web-quality.md](web-quality.md): visual evidence cannot prove semantics, state persistence, hydration, or runtime behavior, and source inspection cannot prove visual hierarchy or feel.
 
+Use this file as the review protocol for `playbooks/review.md` and as the bounded finish pass for other playbooks. It does not replace the task classifier, Visual Thesis, or implementation gate.
+
 ## Capture
 
 Use the project's existing browser or preview workflow. When tooling permits, capture:

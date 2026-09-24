@@ -18,6 +18,8 @@ OTL addresses that failure through reasoning, not another set of style defaults.
 
 `Product Read + Implementation Recon -> Design Read -> Visual Thesis -> Shape -> Design Language -> Implement -> Visual Evidence Loop + Implementation Quality Gate -> Correct -> Ship`
 
+The process is routed by task class: `Local edit`, `Refine`, `Redesign`, `New surface`, `Design system`, or `Review`. Non-local work uses a matching playbook, while references are loaded only when their domain knowledge can affect the current decision.
+
 The **Visual Thesis** is one product-specific sentence describing how the interface should communicate. The **WHY Test** asks what product fact, user need, content property, or interaction requires each prominent decision. The rendered review then checks the result on actual desktop and mobile viewports when the environment permits it.
 
 ## Core ideas

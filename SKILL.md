@@ -42,7 +42,33 @@ Use this skill when an agent is asked to:
 - improve visual quality, distinctiveness, hierarchy, motion, or interaction polish;
 - review an implemented interface and make it ship-ready.
 
+For a request that is only critique or validation, use `playbooks/review.md` and do not invent implementation artifacts. For `Local edit`, use the compact contract and skip the substantial workflow.
+
 Treat a task as substantial when it changes a complete surface or flow, responsive composition, visual system, or more than one interactive state. For a small, purely mechanical UI edit, apply only the relevant principles and do not invent a full design process.
+
+## Task classifier
+
+Choose one class before choosing a workflow:
+
+- **Local edit:** one localized copy, style, spacing, or state correction without changing page hierarchy or shared language.
+- **Refine:** the incumbent visual system remains; hierarchy, type, spacing, responsiveness, interaction, or polish improves.
+- **Redesign:** product truth and core behavior remain, while the visual world or information architecture may change.
+- **New surface:** a new screen, page, or flow lacks sufficient incumbent visual truth.
+- **Design system:** shared tokens, primitives, component language, or visual rules change across consumers.
+- **Review:** the request primarily asks for critique, audit, or validation of an implemented surface.
+
+Use the narrowest class that fits. A local edit uses the compact contract below; other classes load their matching playbook from `playbooks/`.
+
+## Surface mode
+
+Choose a mode for the specific surface, not the whole product:
+
+- **Persuade:** attention, narrative, proof, and conversion;
+- **Operate:** task completion, scanning, predictability, and state clarity;
+- **Read:** comprehension, hierarchy, and reading rhythm;
+- **Experience:** artifact dominance, atmosphere, and interface recession.
+
+Mode changes priorities, not aesthetics. A developer-tool landing page may be `Persuade`; the tool itself may be `Operate`; its documentation may be `Read`.
 
 ### Size the task before choosing the process
 
@@ -53,6 +79,17 @@ Use the lightest process that can answer the design question:
 - **Unclear scope:** begin with a short recon. Promote the task to substantial if the change affects hierarchy, responsive behavior, shared primitives, or more than one state.
 
 Do not produce a design brief for a small edit. Do not compress a substantial redesign into a collection of local CSS tweaks.
+
+### Shared reasoning contract
+
+For non-local work, keep four compact blocks rather than separate ceremony artifacts:
+
+1. **Context:** product, user, surface mode, constraints, and relevant implementation facts.
+2. **Direction:** Visual Thesis plus three to five decisions in `choice`, `because`, `check` form. Apply the WHY Test to these decisions rather than creating a separate WHY document.
+3. **Shape:** hierarchy, route/content ownership, composition, responsive transformation, and important states.
+4. **Evidence:** visual, behavior, implementation, IA/accessibility evidence, plus blocked or unverified claims.
+
+Design axes, content inventories, detailed scenario matrices, and evidence tables are optional supporting tools. Promote them only when they change a decision or substantiate a material claim.
 
 ## Workflow
 
@@ -91,25 +128,7 @@ If a missing fact would lead to two materially different design directions, ask 
 
 For a substantial surface, write a compact surface contract before coding: visitor mode (`Persuade`, `Operate`, `Read`, or `Experience`), primary task, proof or content the surface must carry, realistic content/data range, route topology, important states, and finish criteria. Keep this separate from durable product facts and from treatment details.
 
-### 2. Write a Design Read
-
-Describe the interface's character in one or two sentences without naming CSS treatments. Include the audience tension it must resolve. For example: "A developer-facing network utility that must feel technically credible while remaining legible to operators who do not think in network primitives."
-
-Then set a small set of design axes from 0 to 5. Use the axes to change decisions, not to decorate a plan:
-
-| Axis | Low end | High end |
-| --- | --- | --- |
-| Compositional variance | predictable alignment and repeated regions | deliberate shifts, asymmetry, or editorial pacing |
-| Information density | spacious, few simultaneous choices | compact, comparison-oriented, data-rich |
-| Expression | quiet and transparent | visibly authored and emotionally specific |
-| Motion intensity | static or feedback-only | choreographed transitions and spatial continuity |
-| UI familiarity | conventional controls and patterns | novel interaction or custom visual grammar |
-
-Choose only axes that affect the surface. High expression or variance never excuses weak hierarchy. High familiarity is often the right decision for critical or repeated workflows.
-
-For each selected axis, write the consequence in plain language (for example, “high density means comparison rows need stronger scan anchors”). If an axis does not change a later decision, remove it.
-
-### 3. Define a Visual Thesis
+### 2. Define a Visual Thesis
 
 Write one product-specific sentence before coding. It should describe the visual mechanism and the job it performs, not a mood word. A useful thesis names the subject, the user need, and the source of visual character.
 
@@ -125,7 +144,7 @@ Turn the thesis into a short decision ledger before coding. Record three to seve
 
 When the brief is ambiguous and the choice is high-value, explore 2-3 genuine directions before implementation. Name the axis of divergence: composition, hierarchy, density, interaction model, typography role, visual metaphor, or motion language. Changing only color, radius, shadow, or one font is cosmetic variation, not a new direction. Keep this optional for normal tasks.
 
-### 4. Shape the composition
+### 3. Shape the composition
 
 Before choosing components, decide:
 
@@ -141,13 +160,13 @@ Components serve composition. Composition must not become a container for a libr
 
 Choose one primary action and no more than two or three secondary actions for the first view. Define the route topology before naming component sections. Required source content may need to appear on the page without becoming a global navigation route, and a section anchor is not automatically a product-level destination.
 
-### 5. Build a design language
+### 4. Build a design language
 
 Choose typography, color roles, spacing, shape, borders, elevation, iconography, and motion as a coherent response to the thesis. Reuse existing primitives when they are healthy. Select a real design system because its interaction model, accessibility behavior, platform, and ecosystem fit the product - never because its screenshots resemble a moodboard. OTL is framework-independent: use the project's existing React, Vue, Svelte, plain HTML/CSS, native component system, or legacy stack unless a change is necessary and justified.
 
 Read only the relevant references from the routing table below. Do not load every reference by default.
 
-### 6. Implement with discipline
+### 5. Implement with discipline
 
 Use the existing stack unless a change is necessary. Check dependencies before adding one. Keep semantic HTML, responsive behavior, actual content length, and states in scope: loading, empty, error, disabled, focus, and success where relevant. Do not add decorative complexity that cannot survive the content or the mobile layout.
 
@@ -155,7 +174,7 @@ Before creating a new primitive, inspect existing components, variants, tokens, 
 
 Copy is part of the interface. Use concrete user language and action labels. Remove filler such as "unlock the power of", "seamlessly", "next-generation", or "elevate" when it does not communicate a product fact.
 
-### 7. Review the result
+### 6. Review the result
 
 For any substantial UI task, rendered review is a required completion step whenever a browser, preview, or screenshot tool is available. Record the evidence level and do not treat source inspection as a substitute.
 
@@ -193,11 +212,23 @@ Classify findings before correcting them:
 
 After each correction, re-check the affected viewport and state. Stop when the decision ledger checks pass, no material unresolved structural or legibility findings remain, and treatment changes would be preference-only. Any remaining structural or legibility finding must be explicitly blocked or out of scope.
 
-### 8. Ship
+### 7. Ship
 
 Before finishing, confirm that the final surface has a clear dominant element, a stable hierarchy, usable controls, realistic content behavior, accessible focus and contrast, reduced-motion behavior, and one coherent visual language. Remove or justify any non-essential flourish during the final pass.
 
 ## Progressive disclosure
+
+Load the matching playbook first for non-local work:
+
+| Class | Playbook |
+| --- | --- |
+| Refine | [playbooks/refine.md](playbooks/refine.md) |
+| Redesign | [playbooks/redesign.md](playbooks/redesign.md) |
+| New surface | [playbooks/new-surface.md](playbooks/new-surface.md) |
+| Design system | [playbooks/design-system.md](playbooks/design-system.md) |
+| Review | [playbooks/review.md](playbooks/review.md) |
+
+Then load the smallest set of domain references that can materially affect the current decision. Playbooks own process, evidence, and stop conditions; references own domain knowledge. Do not read every reference by default.
 
 Read a reference only when the task makes it relevant:
 
@@ -221,22 +252,7 @@ For a redesign, read `redesign.md`, `anti-slop.md`, and `visual-review.md` toget
 
 ## Minimum internal contract
 
-For any substantial surface, keep a compact working note with:
-
-1. facts and assumptions;
-2. Implementation Recon findings when the task is substantial;
-3. surface contract;
-4. Design Read;
-5. selected axes and their consequences;
-6. Visual Thesis;
-7. composition map;
-8. page-level content inventory and primary home for each major entity;
-9. three to seven high-signal decisions with `choice`, `because`, and observable `check`;
-10. page-level IA preflight findings and disposition;
-11. evidence matrix and claim audit;
-12. named scenario coverage and results;
-13. visual and implementation QA targets, evidence status, and findings;
-14. corrections made.
+For any substantial surface, keep the four-block working note described above. Put detailed content inventories, IA preflight, evidence matrices, scenario coverage, and corrections in the relevant playbook or review record only when they materially apply.
 
 Do not output this contract by default when the user only needs a small implementation. Use it to make the work coherent and auditable.
 
